@@ -3,7 +3,7 @@
 const arr = ["apple", "kiwi", "mango", "orange"]
 
 function logItems(array) {
-    for (let i = 1; i < arr.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         console.log(`1. ${i} -- ${array[i]}`)
     }
 }
@@ -18,14 +18,13 @@ function calculateEngravingPrice(message, pricePerWord) {
     console.log("2.", word.length * pricePerWord)
 }
 
-calculateEngravingPrice("hi my name is lisa ", 5)
+calculateEngravingPrice("hi my name is lisa", 5)
 
 // 3
 
 const str = "I really love JS"
-let result = ""
-
 function findLongestWord(string) {
+    let result = ""
     for (const word of string.split(" ")) {
         if (word.length > result.length) {
             result = word
@@ -54,7 +53,8 @@ formatString("I really love JS")
 // 5
 
 function checkForSpam(message) {
-    if (message.includes("spam") | message.includes("sales")) {
+    message.toLowerCase()
+    if (message.includes("spam") || message.includes("sales")) {
         console.log("5.1.", true)
     } else {
         console.log("5.2.", false)
@@ -67,20 +67,21 @@ checkForSpam("hi i'm offering a new idea")
 
 // 6
 
-let input 
+let input
 const numbers = [];
 let total = 0;
 
-while(true){ //бесконечно пока тру
-    input = prompt("your number:")
-    numbers.push(Number(input)) //в конец масива числа
-
-    if(input === null){ //есди в инпут ничего не написано (нажали отмена)
+while (true) { //бесконечно пока тру
+    
+    if (input === null) { //есди в инпут ничего не написано (нажали отмена)
         break
     }
+
+    input = prompt("your number:")
+    numbers.push(Number(input)) //в конец масива числа
 }
 
-for(const num of numbers){
+for (const num of numbers) {
     total += num
 }
 
@@ -101,18 +102,18 @@ function isLoginValid(login) {
 
 function isLoginUnique(allLogins, login) {
     for (const log of allLogins) {
-        if (log === login){
+        if (log === login) {
             return false
         }
     }
-        return true
+    return true
 }
 
-function addLogin(allLogins, login){
-    if (!isLoginValid(login)){
+function addLogin(allLogins, login) {
+    if (!isLoginValid(login)) {
         return 'Помилка! Логін повинен бути від 4 до 16 символів'
-    } 
-    if (!isLoginUnique(allLogins, login)){
+    }
+    if (!isLoginUnique(allLogins, login)) {
         return 'Такий логін уже використовується!'
     }
     logins.push(login)
