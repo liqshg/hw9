@@ -15,10 +15,10 @@ logItems(arr)
 
 function calculateEngravingPrice(message, pricePerWord) {
     const word = message.split(" ")
-    console.log("2.", word.length * pricePerWord)
+    return  word.length * pricePerWord
 }
 
-calculateEngravingPrice("hi my name is lisa", 5)
+console.log("2.", calculateEngravingPrice("hi my name is lisa", 5))
 
 // 3
 
@@ -40,14 +40,14 @@ console.log("3.", findLongestWord(str))
 
 function formatString(string) {
     if (string.length <= 40) {
-        console.log("4.", string)
+        return string
     } else if (string.length > 40) {
-        console.log("4.", string.slice(0, 40) + "...")
+        return string.slice(0, 40) + "..."
     }
 }
 
-formatString("I really love JS it's the best coding lang ever")
-formatString("I really love JS")
+console.log("4.", formatString("I really love JS it's the best coding lang ever"))
+console.log("4.", formatString("I really love JS"))
 
 
 // 5
@@ -55,14 +55,14 @@ formatString("I really love JS")
 function checkForSpam(message) {
     message.toLowerCase()
     if (message.includes("spam") || message.includes("sales")) {
-        console.log("5.1.", true)
+        return true
     } else {
-        console.log("5.2.", false)
+        return false
     }
 }
 
-checkForSpam("hi i'm offering a new spam")
-checkForSpam("hi i'm offering a new idea")
+console.log("5.1.", checkForSpam("hi i'm offering a new spam"))
+console.log("5.1.", checkForSpam("hi i'm offering a new idea"))
 
 
 // 6
